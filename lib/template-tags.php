@@ -103,6 +103,8 @@ function inline_comments_add_comment(){
 
     wp_insert_comment( $data );
 
+	echo 'success'; // For debugging
+	
     die();
 }
 
