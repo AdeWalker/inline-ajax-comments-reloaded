@@ -79,6 +79,7 @@ jQuery(document).ready(function ($) {
                 //console.log(data);
             },
             success: function (msg) {
+            	console.log(msg);
                 inline_comments_ajax_load_template({
                     "target_div": "#inline_comments_ajax_target",
                     //"template": $( '#inline_comments_ajax_handle' ).attr( 'data-template' ),
