@@ -1,6 +1,6 @@
-=== Inline Ajax Comments ===
-Contributors: ZaneMatthew
-Donate link: http://zanematthew.com/
+=== Inline Ajax Comments Reloaded ===
+Contributors: studiograsshopper
+Donate link: http://www.studiograsshopper.ch/
 Tags: comments, ajax, inline
 Requires at least: 3.6
 Tested up to: 3.6
@@ -8,32 +8,31 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Displays a single line textarea for entering comments, users can press "enter/return", and comments are loaded and submitted via AJAX.
+Creates and displays Facebook-style single line comment form and comments, using Ajax. Based on ZaneMatthew's Inline Ajax Comments plugin, tweaked for studiograsshopper's needs.
+
 
 == Description ==
 
-This plugin places a comment form similar to Facebook, only displaying a single line textarea, which submits when the user presses "enter/return" on their keyboard.
+This plugin replaces your theme's comments form and template with a Facebook-style, single line comment entry, powered by AJAX. 
 
 = Features =
-* Single line textarea
-* Auto expanding textarea
+* Single line textarea for comment entry
+* Auto expanding textarea (not working yet)
 * AJAX submitted comments
 * AJAX loaded comments
-* Admin settings for additional styling
+
+This is a highly modified version of ZaneMatthew's [Inline Ajax Comments plugin](http://zanematthew.com/blog/plugins/inline-comments/).
+Nice work, Sir!
 
 
 == Installation ==
 
-1. Install the plugin via WordPress or download and upload the plugin to the `/wp-content/plugins/`
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Upload the entire `inline-ajax-comments-reloaded` folder to the `/wp-content/plugins/` directory
+2. DO NOT change the name of the `inline-ajax-comments-reloaded` folder
+3. Activate the plugin through the 'Plugins' menu in the WordPress Dashboard
+
 
 == Frequently Asked Questions ==
-
-= The Register link is not working? =
-Make sure that "Anyone can register" is checked in "Settings --> General"
-
-= Where is the "url", "email" field? =
-Users can add their "url" or "email" by clicking the "more" link next to the textarea.
 
 = Doesn't this prevent search engines from seeing comments? =
 At the moment it does, [Google Ajax Crawling](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started) will be added in a later version.
@@ -45,35 +44,21 @@ Yes
 No
 
 = Does this support paging? =
-At the moment no, later versions might.
+No
+
 
 == Screenshots ==
 
-1. As seen when user is logged in
-2. Admin settings
-3. As seen when user is not logged in
+To be done
+
 
 == Upgrade Notice ==
 
-* Check settings
+To be done
+
 
 == Changelog ==
 
-= 1.2.1 =
-* Enhancement: Comment area now toggles from 1 line to multi-line
-* Enhancement: The following `html` tags are now allowed `<a href="" title="">`, `<blockquote>`, `<code>`, `<em>`, `<strong>`
-* Enhancement: Added additional styling for post authors
-* Enhancement: User name links to their website
-* Enhancement: You can now share direct links to comments
-* Enhancement: Added setting to keep comment box open
-
-= 1.2 =
-* Comments now work on Pages (not just posts)
-* Adding a setting to keep the 'more' section open
-
-= 1.1 =
-* Removing dynamic functions for older PHP support
-* Removing dead code
-
-= 0.1-alpha =
-* Initial version
+= 0.7.0 =
+* Initial release 25 September 2013
+* This is a dev version and probably does not work properly. Yet.
