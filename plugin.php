@@ -18,22 +18,22 @@
 
 
 // Define some constants
-define( 'AIAC_URL',				plugins_url( 'inline-ajax-comments' ) );
-define( 'AIAC_DIR', 			plugin_dir_path( __FILE__ ) );
-define( 'AIAC_LIB_DIR', 		AIAC_DIR . '/lib' );
-define( 'AIAC_LIB_URL',			AIAC_URL . '/lib' );
-define( 'AIAC_CSS_URL',			AIAC_URL . '/css' );
-define( 'AIAC_JS_URL',			AIAC_URL . '/js' );
-define( 'AIAC_TEMPLATE_DIR',	AIAC_DIR . '/templates' );
-define( 'AIAC_LANG_DIR_REL', 	'/ades-image-likes-plugin/languages' );
+define( 'IACR_URL',				plugins_url( 'inline-ajax-comments-reloaded' ) );
+define( 'IACR_DIR', 			plugin_dir_path( __FILE__ ) );
+define( 'IACR_LIB_DIR', 		IACR_DIR . '/lib' );
+define( 'IACR_LIB_URL',			IACR_URL . '/lib' );
+define( 'IACR_CSS_URL',			IACR_URL . '/css' );
+define( 'IACR_JS_URL',			IACR_URL . '/js' );
+define( 'IACR_TEMPLATE_DIR',	IACR_DIR . '/templates' );
+define( 'IACR_LANG_DIR_REL', 	'/inline-ajax-comments-reloaded/languages' );
 
-define( 'AIAC_VER', 		'0.7.0' );
-define( 'AIAC_WP_VER_REQ', 	'3.6' );
+define( 'IACR_VER', 		'0.7.0' );
+define( 'IACR_WP_VER_REQ', 	'3.6' );
 
-define( 'AIAC_NAME', 		'Ade\'s Image Likes' );
-define( 'AIAC_FILE_NAME', 	'ades-image-likes/ades-image-likes.php' );
-define( 'AIAC_FILE_HOOK', 	'ades_image_likes' );
-define( 'AIAC_PAGEHOOK', 	'settings_page_' . AIAC_FILE_HOOK );
+define( 'IACR_NAME', 		'Inline Ajax Comments Reloaded' );
+define( 'IACR_FILE_NAME', 	'inline-ajax-comments-reloaded/inline-ajax-comments-reloaded.php' );
+define( 'IACR_FILE_HOOK', 	'inline_ajax_comments_reloaded' );
+define( 'IACR_PAGEHOOK', 	'settings_page_' . IACR_FILE_HOOK );
 
 
 /**
@@ -85,11 +85,11 @@ if ( is_admin() )
 /**
  * Theme only functions
  */
-require_once AIAC_LIB_DIR . '/template-tags.php';
+require_once IACR_LIB_DIR . '/template-tags.php';
 
 
 function inline_comments_enqueue_styles() {
-	wp_register_style( 'inline-ajax-comments-style', AIAC_CSS_URL . '/style.css' );
+	wp_register_style( 'inline-ajax-comments-style', IACR_CSS_URL . '/style.css' );
 	wp_enqueue_style( 'inline-ajax-comments-style' );
 
 }
@@ -100,7 +100,7 @@ add_action('wp_enqueue_scripts', 'inline_comments_enqueue_styles', 4 );
 function inline_comments_enqueue_scripts(){
     
     //wp_register_script( 'textarea_auto_expand-script', plugin_dir_url( __FILE__ ) . 'vendor/textarea-auto-expand/jquery.textarea_auto_expand.js' );
-    wp_register_script( 'inline-ajax-comments-script', AIAC_JS_URL . '/script.js', array('jquery'), AIAC_VER, false );
+    wp_register_script( 'inline-ajax-comments-script', IACR_JS_URL . '/script.js', array('jquery'), IACR_VER, false );
     
     wp_enqueue_script( 'inline-ajax-comments-script' );
     
