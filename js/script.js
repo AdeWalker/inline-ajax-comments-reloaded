@@ -99,6 +99,7 @@ jQuery(document).ready(function ($) {
     $(window).load(function () {
         if ($('#inline_comments_ajax_handle').length) {
             $('.inline-comments-loading-icon').show();
+            $('#inline-comments-form').hide();
 
             data = {
                 "action": "inline_comments_load_template",
@@ -118,8 +119,9 @@ jQuery(document).ready(function ($) {
                    // $('#ajax-panel').html('<div class="loading"><img src="/images/loading.gif" alt="Loading..." /></div>');
                 },
                 success: function (msg) {
-                    $( '.inline-comments-loading-icon').fadeOut();
+                    $( '.inline-comments-loading-icon').hide();
                     $( "#inline_comments_ajax_target" ).fadeIn().html(msg); // Give a smooth fade in effect
+                    $( '#inline-comments-form').fadeIn();
                     if ( location.hash ){
                         $('html, body').animate({
                             scrollTop: $(location.hash).offset().top
