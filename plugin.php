@@ -1,14 +1,19 @@
 <?php
-
 /**
- * Plugin Name: Inline Ajax Comments
- * Plugin URI: http://zanematthew.com/blog/plugins/inline-comments/
- * Description: Displays a single line textarea for entering comments, users can press "enter/return", and comments are loaded and submitted via AJAX.
- * Tags: comments, ajax, security, ajax comments, comment, inline, comment form
- * Version: 1.2.1
- * Author: ZaneMatthew
- * Author URI: http://zanematthew.com/
+ * Plugin Name: Inline Ajax Comments Reloaded
+ * Plugin URI: http://www.studiograsshopper.ch/projects/inline--ajax-comments-reloaded/
+ * Description: Creates and displays Facebook-style single line comment form and comments, using Ajax.
+ * Tags: comments, ajax, ajax comments, comment, inline, comment form
+ * Version: 0.7.0
+ * Author: Studiograsshopper
+ * Author URI: http://www.studiograsshopper.ch/
  * License: GPL
+ */
+ 
+/**
+ * This is a highly modified version of ZaneMatthew's Inline Ajax Comments plugin
+ * http://zanematthew.com/blog/plugins/inline-comments/
+ * http://zanematthew.com/
  */
 
 
@@ -22,7 +27,7 @@ define( 'AIAC_JS_URL',			AIAC_URL . '/js' );
 define( 'AIAC_TEMPLATE_DIR',	AIAC_DIR . '/templates' );
 define( 'AIAC_LANG_DIR_REL', 	'/ades-image-likes-plugin/languages' );
 
-define( 'AIAC_VER', 		'0.8.0' );
+define( 'AIAC_VER', 		'0.7.0' );
 define( 'AIAC_WP_VER_REQ', 	'3.6' );
 
 define( 'AIAC_NAME', 		'Ade\'s Image Likes' );
