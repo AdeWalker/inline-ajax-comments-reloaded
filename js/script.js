@@ -114,10 +114,6 @@ jQuery(document).ready(function ($) {
                 url: inlinecomments.ajaxurl,
                 dataType: "html",
                 data: data,
-                beforeSend: function () {
-                    // this is where we append a loading image
-                   // $('#ajax-panel').html('<div class="loading"><img src="/images/loading.gif" alt="Loading..." /></div>');
-                },
                 success: function (msg) {
                     $( '.inline-comments-loading-icon').hide();
                     $( "#inline_comments_ajax_target" ).fadeIn().html(msg); // Give a smooth fade in effect
