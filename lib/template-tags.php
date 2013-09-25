@@ -178,6 +178,6 @@ function inline_comments_profile_pic( $id_or_email=null, $email=null ){
 
 
 function inline_comments_template( $file ){
-    return AIAC_LIB_DIR . '/comments-template.php';
+    return IACR_LIB_DIR . '/comments-template.php';
 }
 add_filter('comments_template', 'inline_comments_template');
