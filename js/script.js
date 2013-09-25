@@ -56,7 +56,7 @@ jQuery(document).ready(function ($) {
         var $this = $(this);
         //$this.css('opacity', '0.5');
 
-        data = {
+        var data = {
             action: "inline_comments_add_comment",
             post_id: $('#inline_comments_ajax_handle').attr('data-post_id'),
             user_name: $('#inline_comments_user_name').val(),
