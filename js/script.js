@@ -35,6 +35,7 @@ jQuery(document).ready(function ($) {
             url: inlinecomments.ajaxurl,
             dataType: "html",
             data: params,
+            cache: false,
             global: ajax_global,
             success: function (msg) {
                 $(params.target_div).fadeOut(4000);
