@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Inline Ajax Comments Reloaded
- * Plugin URI: http://www.studiograsshopper.ch/projects/inline--ajax-comments-reloaded/
+ * Plugin URI: http://www.studiograsshopper.ch/projects/inline-ajax-comments-reloaded/
  * Description: Creates and displays Facebook-style single line comment form and comments, using Ajax.
  * Tags: comments, ajax, ajax comments, comment, inline, comment form
  * Version: 0.7.0
