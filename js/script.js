@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-    // $('#default_add_comment_form textarea').textareaAutoExpand();
+    $('#inline-comments-textarea').autogrow();
 
     
     /**
@@ -22,7 +22,7 @@ jQuery(document).ready(function ($) {
             $('#default_add_comment_form').submit();
         }
     });
-
+    
 
     window.inline_comments_ajax_load_template = function (params, ajax_global) {
 

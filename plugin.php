@@ -101,8 +101,10 @@ function inline_comments_enqueue_scripts(){
     
     //wp_register_script( 'textarea_auto_expand-script', plugin_dir_url( __FILE__ ) . 'vendor/textarea-auto-expand/jquery.textarea_auto_expand.js' );
     wp_register_script( 'inline-ajax-comments-script', IACR_JS_URL . '/script.js', array('jquery'), IACR_VER, false );
+    wp_register_script( 'autogrow-script', IACR_JS_URL . '/autogrow.min.js', array('jquery'), IACR_VER, false );
     
     wp_enqueue_script( 'inline-ajax-comments-script' );
+    wp_enqueue_script( 'autogrow-script' );
     
     $args = array(
     	'ajaxurl' => admin_url("admin-ajax.php"),
