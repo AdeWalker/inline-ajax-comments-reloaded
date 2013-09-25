@@ -31,9 +31,11 @@
     }
 
 .inline-comments-container textarea {
-    height: 17px;
-    min-height: 17px;
+    border-radius: 1px;
+    height: 20px;
+    min-height: 20px;
     width: 80%;
+    color: #777777;
     resize: none;
     overflow: auto;
     vertical-align: top;
@@ -93,6 +95,7 @@
 
 .inline-comments-more-handle a {
     font-weight: bold;
+    font-size: 12px;
     left: 5px;
     position: relative;
     text-transform: uppercase;
@@ -108,8 +111,8 @@
 .inline-comments-content input[type="text"],
 .inline-comments-content textarea {
     border: 1px solid #BBB;
-    font: normal 13px/1.3em Helvetica, sans-serif, arial;
-    padding: 6px;
+    font: normal 12px/1.2em Helvetica, sans-serif, arial;
+    padding: 2px 4px;
     }
 
 .inline-comments-more-container .inline-comments-field input[type="text"],
@@ -157,3 +160,7 @@
     margin: 5px 0;
     color: #888;
     }
+    
+#inline-comments-form {
+	
+}
