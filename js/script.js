@@ -75,7 +75,7 @@ jQuery(document).ready(function ($) {
             beforeSend: function () {
                 // this is where we append a loading image
                 //$('#default_add_comment_form').html('<div class="loading"><img src="/images/loading.gif" alt="Loading..." /></div>');
-                console.log(data);
+                //console.log(data);
             },
             success: function (msg) {
                 inline_comments_ajax_load_template({
