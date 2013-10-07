@@ -1,6 +1,10 @@
-.inline-comments-container .callout-container {
+.inline-comments-container .inline-comments-callout-container {
     width: 100%;
     }
+    
+.inline-comments-callout-container {
+	display:none;
+}
 
 .inline-comments-container img {
     border: 0;
