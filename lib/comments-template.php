@@ -39,9 +39,12 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
     <input type="hidden" name="inline_comments_nonce_guest" value="<?php echo $nonce_guest; ?>" id="inline_comments_nonce_guest" />
     
     <?php if ( get_option('comment_registration') != 1 || is_user_logged_in() ) : ?>
+        
         <div id="inline-comments-form" class="inline-comments-content inline-comments-content-comment-fields">
             <div class="inline-comments-p">
+                
                 <form action="javascript://" method="POST" id="default_add_comment_form">
+                    
                     <input type="hidden" name="inline_comments_nonce_user" value="<?php echo $nonce_user; ?>" id="inline_comments_nonce_user" />
                     <?php inline_comments_profile_pic(); ?>
                     <textarea placeholder="Press enter to submit comment&#8230;" tabindex="4" name="comment" id="inline-comments-textarea" class="inline-comments-auto-expand submit-on-enter"></textarea>
@@ -55,9 +58,13 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
                         <div class="inline-comments-field"><input type="email" required tabindex="5" name="user_email" id="inline_comments_user_email" placeholder="<?php print $email; ?>" value="<?php print $user_email; ?>"  /></div>
                         <div class="inline-comments-field"><input type="url" required tabindex="6" name="user_url" id="inline_comments_user_url" placeholder="<?php print $website; ?>" value="<?php print $user_website; ?>" /></div>
                     </div>
+                    
                 </form>
+                
             </div>
+            
         </div>
+    
     <?php else : ?>
         
         <div class="inline-comments-callout-container">
@@ -70,5 +77,5 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
             <p>Please <?php echo $reg; ?><a href="<?php print wp_login_url(); ?>" class="inline-comments-login-handle">Login</a> to leave a comment</p>
         </div>
     <?php endif; ?>
-</div>
+	</div>
 </div>
