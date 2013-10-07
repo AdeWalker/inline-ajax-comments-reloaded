@@ -59,7 +59,7 @@ jQuery(document).ready(function ($) {
 
         var data = {
             action: "inline_comments_add_comment",
-            post_id: $('#inline_comments_ajax_handle').attr('data-post_id'),
+            post_id: $('#inline-comments-ajax-handle').attr('data-post_id'),
             user_name: $('#inline_comments_user_name').val(),
             user_email: $('#inline_comments_user_email').val(),
             user_url: $('#inline_comments_user_url').val(),
@@ -81,9 +81,9 @@ jQuery(document).ready(function ($) {
             success: function (msg) {
             	console.log(msg);
                 inline_comments_ajax_load_template({
-                    "target_div": "#inline_comments_ajax_target",
+                    "target_div": "#inline-comments-ajax-target",
                     //"template": $( '#inline_comments_ajax_handle' ).attr( 'data-template' ),
-                    "post_id": $('#inline_comments_ajax_handle').attr('data-post_id'),
+                    "post_id": $('#inline-comments-ajax-handle').attr('data-post_id'),
                     "security": $('#inline_comments_nonce_user').val()
                 }, false);
                 $('textarea').val('');
@@ -99,16 +99,16 @@ jQuery(document).ready(function ($) {
 
     
     $(window).load(function () {
-        if ($('#inline_comments_ajax_handle').length) {
+        if ($('#inline-comments-ajax-handle').length) {
             $('.inline-comments-loading-icon').show();
             $('#inline-comments-form').hide();
 
             data = {
                 "action": "inline_comments_load_template",
-                "target_div": "#inline_comments_ajax_target",
-                "template": $( '#inline_comments_ajax_handle' ).attr( 'data-template' ),
-                "post_id": $( '#inline_comments_ajax_handle' ).attr( 'data-post_id' ),
-                "security": $('#inline_comments_nonce_user').val()
+                "target_div": "#inline-comments-ajax-target",
+                "template": $( '#inline-comments-ajax-handle' ).attr( 'data-template' ),
+                "post_id": $( '#inline-comments-ajax-handle' ).attr( 'data-post_id' ),
+                "security": $('#inline_comments_nonce').val()
             };
 
             $.ajax({
@@ -118,8 +118,9 @@ jQuery(document).ready(function ($) {
                 data: data,
                 success: function (msg) {
                     $( '.inline-comments-loading-icon').hide();
-                    $( "#inline_comments_ajax_target" ).fadeIn().html(msg); // Give a smooth fade in effect
+                    $( "#inline-comments-ajax-target" ).fadeIn().html(msg); // Give a smooth fade in effect
                     $( '#inline-comments-form').fadeIn();
+                    $( '.inline-comments-callout-container' ).fadeIn();
                     if ( location.hash ){
                         $('html, body').animate({
                             scrollTop: $(location.hash).offset().top
@@ -128,7 +129,7 @@ jQuery(document).ready(function ($) {
                     }
                 },
                 error: function () {
-                    $('#inline_comments_ajax_target').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+                    $('#inline-comments-ajax-target').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
                 
                 }
             });
