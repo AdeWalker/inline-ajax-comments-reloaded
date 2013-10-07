@@ -27,12 +27,13 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
 <noscript>JavaScript is required to load the comments.</noscript>
 
 <div class="inline-comments-container">
-    <div id="inline_comments_ajax_handle" class="last-child" data-post_id="<?php echo $post->ID; ?>">
+
+    <div id="inline-comments-ajax-handle" class="last-child" data-post_id="<?php echo $post->ID; ?>">
     
-    <?php // Comments will be loaded into this div ?>
-    <div id="inline_comments_ajax_target" style="display: none;"></div>
+    	<?php // Comments will be loaded into this div ?>
+    	<div id="inline-comments-ajax-target" style="display: none;"></div>
     
-    <div class="inline-comments-loading-icon">Loading Comments&#8230;</div>
+    	<div class="inline-comments-loading-icon">Loading Comments&#8230;</div>
     
     <?php // If form isn't visible, still need to provide nonce for the ajax loading of comments ?>
     <input type="hidden" name="inline_comments_nonce_guest" value="<?php echo $nonce_guest; ?>" id="inline_comments_nonce_guest" />
@@ -58,8 +59,8 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
             </div>
         </div>
     <?php else : ?>
-        <div class="callout-container">
             <p>Please <?php echo wp_register('','', false); ?> or <a href="<?php print wp_login_url(); ?>" class="inline-comments-login-handle">Login</a> to leave Comments</p>
+        <div class="inline-comments-callout-container">
         </div>
     <?php endif; ?>
 </div>
