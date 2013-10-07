@@ -41,6 +41,7 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
     <?php if ( get_option('comment_registration') != 1 || is_user_logged_in() ) : ?>
         
         <div id="inline-comments-form" class="inline-comments-content inline-comments-content-comment-fields">
+            
             <div class="inline-comments-p">
                 
                 <form action="javascript://" method="POST" id="default_add_comment_form">
@@ -49,6 +50,7 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
                     <?php inline_comments_profile_pic(); ?>
                     <textarea placeholder="Press enter to submit comment&#8230;" tabindex="4" name="comment" id="inline-comments-textarea" class="inline-comments-auto-expand submit-on-enter"></textarea>
                     <span class="inline-comments-more-handle"><a href="#">more</a></span>
+                    
                     <div class="inline-comments-more-container" <?php if ( $user_email != null && isset( $keep_open ) && $keep_open != "on" ) : ?>style="display: none;"<?php endif; ?>>
                         <div class="inline-comments-allowed-tags-container">
                             Allowed <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:
