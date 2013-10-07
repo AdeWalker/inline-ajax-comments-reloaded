@@ -97,11 +97,16 @@ jQuery(document).ready(function ($) {
 
     });
 
-    
+    // Fires when page is loaded or refreshed
     $(window).load(function () {
         if ($('#inline-comments-ajax-handle').length) {
+            
+            // Display loading icon
             $('.inline-comments-loading-icon').show();
+            // Hide comment form
             $('#inline-comments-form').hide();
+            // Hide callout
+            //$('.inline-comments-callout-container').hide();
 
             data = {
                 "action": "inline_comments_load_template",
