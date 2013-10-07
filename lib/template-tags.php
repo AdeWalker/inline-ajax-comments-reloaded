@@ -126,7 +126,7 @@ function inline_comments_load_template(){
     ) );
 
     ?>
-    <div id="comments-target">
+    <div id="inline-comments-target">
         <?php if ( $comments ) : foreach( $comments as $comment) : ?>
             <?php
             $user = new WP_User( $comment->user_id );
