@@ -59,8 +59,15 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
             </div>
         </div>
     <?php else : ?>
-            <p>Please <?php echo wp_register('','', false); ?> or <a href="<?php print wp_login_url(); ?>" class="inline-comments-login-handle">Login</a> to leave Comments</p>
+        
         <div class="inline-comments-callout-container">
+        	<?php if ( get_option( 'users_can_register') == 1 ) {
+        		$reg = wp_register('','', false);
+        		$reg = $reg . ' or ';
+        	} else {
+        		$reg = '';
+        	}?>
+            <p>Please <?php echo $reg; ?><a href="<?php print wp_login_url(); ?>" class="inline-comments-login-handle">Login</a> to leave a comment</p>
         </div>
     <?php endif; ?>
 </div>
