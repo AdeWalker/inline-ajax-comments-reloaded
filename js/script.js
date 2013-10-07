@@ -87,7 +87,7 @@ jQuery(document).ready(function ($) {
                     "security": $('#inline_comments_nonce_user').val()
                 }, false);
                 $('textarea').val('');
-                $this.css('opacity','1');
+                //$this.css('opacity','1');
             },
             error: function () {
                 $('#inline_comments_ajax_target').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
