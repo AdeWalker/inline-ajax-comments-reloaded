@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-    $('#inline-comments-textarea').autogrow();
+    $('textarea').autogrow();
 
     
     /**
