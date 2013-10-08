@@ -103,10 +103,10 @@ jQuery(document).ready(function ($) {
         // We only run this if the comments template has been served
         if ($('#inline-comments-ajax-handle').length) {
 
-            data = {
-                "target_div": "#inline-comments-ajax-target",
-                "template": $( '#inline-comments-ajax-handle' ).attr( 'data-template' ),
+            var data = {
                 "action": "inline_comments_get_comments",
+                //"target_div": "#inline-comments-ajax-target",
+                //"template": $( '#inline-comments-ajax-handle' ).attr( 'data-template' ),
                 "post_id": $( '#inline-comments-ajax-handle' ).attr( 'data-post_id' ),
                 "security": $('#inline_comments_nonce').val()
             };
