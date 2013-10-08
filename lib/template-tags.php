@@ -14,8 +14,9 @@
 function inline_comments_loaded(){
     add_action( 'wp_ajax_inline_comments_add_comment', 'inline_comments_add_comment' );
     add_action( 'wp_ajax_nopriv_inline_comments_add_comment', 'inline_comments_add_comment' );
-    add_action( 'wp_ajax_nopriv_inline_comments_load_template', 'inline_comments_load_template' );
-    add_action( 'wp_ajax_inline_comments_load_template', 'inline_comments_load_template' );
+    
+    add_action( 'wp_ajax_nopriv_inline_comments_get_comments', 'inline_comments_get_comments' );
+    add_action( 'wp_ajax_inline_comments_get_comments', 'inline_comments_get_comments' );
     //add_filter( 'template_redirect', 'inline_comments_template_redirect' );
 }
 add_action('plugins_loaded', 'inline_comments_loaded');
@@ -114,7 +115,7 @@ function inline_comments_add_comment(){
  *
  * @since 0.1-alpha
  */
-function inline_comments_load_template(){
+function inline_comments_get_comments(){
 
     check_ajax_referer('inline_comments_nonce_user', 'security');
 

@@ -109,9 +109,9 @@ jQuery(document).ready(function ($) {
             //$('.inline-comments-callout-container').hide();
 
             data = {
-                "action": "inline_comments_load_template",
                 "target_div": "#inline-comments-ajax-target",
                 "template": $( '#inline-comments-ajax-handle' ).attr( 'data-template' ),
+                "action": "inline_comments_get_comments",
                 "post_id": $( '#inline-comments-ajax-handle' ).attr( 'data-post_id' ),
                 "security": $('#inline_comments_nonce').val()
             };
