@@ -102,13 +102,6 @@ jQuery(document).ready(function ($) {
     
         // We only run this if the comments template has been served
         if ($('#inline-comments-ajax-handle').length) {
-            
-            // Display loading icon
-            $('.inline-comments-loading-icon').show();
-            // Hide comment form
-            $('#inline-comments-form').hide();
-            // Hide callout
-            //$('.inline-comments-callout-container').hide();
 
             data = {
                 "target_div": "#inline-comments-ajax-target",
