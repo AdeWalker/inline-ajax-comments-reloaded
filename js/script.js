@@ -116,6 +116,7 @@ jQuery(document).ready(function ($) {
                 url: inlinecomments.ajaxurl,
                 dataType: "html",
                 data: data,
+                timeout: 5000,
                 success: function (msg) {
                 	// fade out loading icon
                     $( '.inline-comments-loading-icon').hide();
