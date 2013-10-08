@@ -99,6 +99,8 @@ jQuery(document).ready(function ($) {
 
     // Fires when page is loaded or refreshed
     $(window).load(function () {
+    
+        // We only run this if the comments template has been served
         if ($('#inline-comments-ajax-handle').length) {
             
             // Display loading icon
@@ -122,9 +124,13 @@ jQuery(document).ready(function ($) {
                 dataType: "html",
                 data: data,
                 success: function (msg) {
+                	// fade out loading icon
                     $( '.inline-comments-loading-icon').hide();
+                    // fade in the retrieved comments
                     $( "#inline-comments-ajax-target" ).fadeIn().html(msg); // Give a smooth fade in effect
+                    // fade in the comments form
                     $( '#inline-comments-form').fadeIn();
+                    // fade in the callout (if it exists)
                     $( '.inline-comments-callout-container' ).fadeIn();
                     if ( location.hash ){
                         $('html, body').animate({
