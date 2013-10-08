@@ -134,7 +134,10 @@ jQuery(document).ready(function ($) {
                     }
                 },
                 error: function () {
-                    $('#inline-comments-ajax-target').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+                	// fade out the loading icon
+                	$( '.inline-comments-loading-icon').hide();
+                	// fade in the error message
+                    $('#inline-comments-ajax-target').fadeIn().html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
                 
                 }
             });
