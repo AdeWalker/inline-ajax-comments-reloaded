@@ -118,6 +118,7 @@ jQuery(document).ready(function ($) {
                 data: data,
                 timeout: 5000,
                 success: function (msg) {
+                	console.log(data);
                 	// fade out loading icon
                     $( '.inline-comments-loading-icon').hide();
                     // fade in the retrieved comments
