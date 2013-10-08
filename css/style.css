@@ -29,11 +29,12 @@
 .inline-comments-callout-container {
     float: left;
     padding: 10px;
-    display:none;
+    display: none; /* Will be revealed by js */
     width: 100%;
 }
 
 #inline-comments-form {
+	display: none; /* Will be revealed by js */
 
 }
     
