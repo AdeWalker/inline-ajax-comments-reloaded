@@ -19,7 +19,7 @@ function inline_comments_loaded(){
     add_action( 'wp_ajax_inline_comments_get_comments', 'inline_comments_get_comments' );
     //add_filter( 'template_redirect', 'inline_comments_template_redirect' );
 }
-add_action('plugins_loaded', 'inline_comments_loaded');
+add_action( 'plugins_loaded', 'inline_comments_loaded' );
 
 
 /**

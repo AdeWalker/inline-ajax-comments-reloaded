@@ -58,7 +58,7 @@ jQuery(document).ready(function ($) {
         //$this.css('opacity', '0.5');
 
         var data = {
-            action: "inline_comments_add_comment",
+            action: 'inline_comments_add_comment',
             post_id: $('#inline-comments-ajax-handle').attr('data-post_id'),
             user_name: $('#inline_comments_user_name').val(),
             user_email: $('#inline_comments_user_email').val(),
@@ -104,15 +104,16 @@ jQuery(document).ready(function ($) {
         if ($('#inline-comments-ajax-handle').length) {
 
             var data = {
-                "action": "inline_comments_get_comments",
                 //"target_div": "#inline-comments-ajax-target",
                 //"template": $( '#inline-comments-ajax-handle' ).attr( 'data-template' ),
-                "post_id": $( '#inline-comments-ajax-handle' ).attr( 'data-post_id' ),
                 "security": $('#inline_comments_nonce').val()
+                action: 'inline_comments_get_comments',
+                post_id: $('#inline-comments-ajax-handle').attr( 'data-post_id' ),
+                get_comments_nonce: $('#inline_comments_nonce').val()
             };
 
             $.ajax({
-                type: "POST",
+                type: 'POST',
                 url: inlinecomments.ajaxurl,
                 dataType: "html",
                 data: data,
@@ -120,13 +121,13 @@ jQuery(document).ready(function ($) {
                 success: function (msg) {
                 	console.log(data);
                 	// fade out loading icon
-                    $( '.inline-comments-loading-icon').hide();
+                    $('.inline-comments-loading-icon').hide();
                     // fade in the retrieved comments
-                    $( "#inline-comments-ajax-target" ).fadeIn().html(msg); // Give a smooth fade in effect
+                    $('#inline-comments-ajax-target').fadeIn().html(msg);
                     // fade in the comments form
-                    $( '#inline-comments-form').fadeIn();
                     // fade in the callout (if it exists)
                     $( '.inline-comments-callout-container' ).fadeIn();
+                    $('#inline-comments-form').fadeIn();
                     if ( location.hash ){
                         $('html, body').animate({
                             scrollTop: $(location.hash).offset().top
