@@ -51,7 +51,16 @@ function inline_comments_template_redirect() {
  */
 function inline_comments_add_comment(){
 
-    check_ajax_referer('inline_comments_nonce_user', 'security');
+    if ( ! check_ajax_referer( 'inline_comments_form_nonce', 'add_comment_nonce', false ) ) {
+    	echo '<p>Oops! You are not supposed to do that.</p>';
+    	die();
+    }
+    
+    if ( get_option('comment_registration') == 1 && ! is_user_logged_in() ) {
+    	echo '<p>You must be logged in to post a comment.</p>';
+    	die();
+    }
+    	
 
     $comment = trim(
             wp_kses( $_POST['comment'],
@@ -69,9 +78,12 @@ function inline_comments_add_comment(){
         )
     );
 
-    if ( empty( $comment ) ) die();
+    if ( empty( $comment ) ) {
+    	echo '<p>Your comment was empty!</p>';
+    	die();
+    }
 
-    if ( get_option('comment_registration') == 1 && ! is_user_logged_in() ) die();
+	// Passed all the checks, allons-y!
 
     $data = array(
         'comment_post_ID' => (int)$_POST['post_id'],
@@ -117,7 +129,10 @@ function inline_comments_add_comment(){
  */
 function inline_comments_get_comments(){
 
-    check_ajax_referer('inline_comments_nonce_user', 'security');
+    if ( ! check_ajax_referer( 'inline_comments_nonce', 'get_comments_nonce', false ) ) {
+    	echo '<p class="error"><strong>Oops!</strong> You do not have permission to do that.</p>';
+    	die();
+    }
 
     $comments = get_comments( array(
         'post_id' => (int)$_POST['post_id'],

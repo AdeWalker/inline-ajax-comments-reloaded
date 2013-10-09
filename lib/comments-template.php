@@ -38,7 +38,7 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
     	<?php // If form isn't visible, still need to provide nonce for the ajax loading of comments ?>
     	<input type="hidden" name="inline_comments_nonce" value="<?php echo $nonce; ?>" id="inline_comments_nonce" />
     
-    <?php if ( get_option('comment_registration') != 1 || is_user_logged_in() ) : ?>
+    	<?php if ( get_option('comment_registration') != 1 || is_user_logged_in() ) : ?>
         
         <div id="inline-comments-form" class="inline-comments-content inline-comments-content-comment-fields">
             
