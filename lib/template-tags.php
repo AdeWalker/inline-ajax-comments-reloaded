@@ -27,9 +27,10 @@ add_action( 'plugins_loaded', 'inline_comments_loaded' );
  * @since 0.1-alpha
  */
 function inline_comments_template_redirect() {
-    //if ( is_singular() || is_page() ) {
-        add_action( 'wp_enqueue_scripts', 'inline_comments_scripts');
-    //}
+    if ( comments_open() ) {
+        add_action( 'wp_enqueue_scripts', 'inline_comments_scripts' );
+    }
+}
 
 
 /**
