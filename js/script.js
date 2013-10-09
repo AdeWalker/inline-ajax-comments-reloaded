@@ -24,11 +24,11 @@ jQuery(document).ready(function ($) {
     });
     
 
-    window.inline_comments_ajax_load_template = function (params, ajax_global) {
+    window.inline_comments_ajax_get_comments = function (params, ajax_global) {
 
         var request_in_process = false;
 
-        params.action = "inline_comments_load_template";
+        params.action = 'inline_comments_get_comments';
 
         $.ajax({
             type: "POST",
@@ -80,7 +80,7 @@ jQuery(document).ready(function ($) {
             },
             success: function (msg) {
             	console.log(msg);
-                inline_comments_ajax_load_template({
+                inline_comments_ajax_get_comments({
                     "target_div": "#inline-comments-ajax-target",
                     //"template": $( '#inline_comments_ajax_handle' ).attr( 'data-template' ),
                     "post_id": $('#inline-comments-ajax-handle').attr('data-post_id'),
