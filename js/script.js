@@ -124,9 +124,12 @@ jQuery(document).ready(function ($) {
                     // fade in the retrieved comments
                     $('#inline-comments-ajax-target').fadeIn().html(msg);
                     // fade in the comments form
-                    // fade in the callout (if it exists)
-                    $( '.inline-comments-callout-container' ).fadeIn();
                     $('#inline-comments-form').fadeIn();
+                    // fade in the callout
+                    // Conditional prevents callout displaying if server-side validation error occurs
+                    if ($('#inline-comments-target').length) {
+                    	$('.inline-comments-callout-container').fadeIn();
+                    }
                     if ( location.hash ){
                         $('html, body').animate({
                             scrollTop: $(location.hash).offset().top
@@ -138,7 +141,7 @@ jQuery(document).ready(function ($) {
                 	// fade out the loading icon
                 	$( '.inline-comments-loading-icon').hide();
                 	// fade in the error message
-                    $('#inline-comments-ajax-target').fadeIn().html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+                    $('#inline-comments-ajax-target').fadeIn().html('<p class="error"><strong>Oops!</strong> Refresh the page and try that again in a few moments.</p>');
                 
                 }
             });
