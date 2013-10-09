@@ -21,8 +21,8 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
         $user_website = $current_user->user_url;
     }
     
-    $nonce_guest = wp_create_nonce('inline_comments_nonce_guest');
-    $nonce_user = wp_create_nonce('inline_comments_nonce_user');
+    $nonce = wp_create_nonce('inline_comments_nonce');
+    $form_nonce = wp_create_nonce('inline_comments_form_nonce');
 ?>
 <noscript>JavaScript is required to load the comments.</noscript>
 
@@ -35,8 +35,8 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
     
     	<div class="inline-comments-loading-icon">Loading Comments&#8230;</div>
     
-    <?php // If form isn't visible, still need to provide nonce for the ajax loading of comments ?>
-    <input type="hidden" name="inline_comments_nonce_guest" value="<?php echo $nonce_guest; ?>" id="inline_comments_nonce_guest" />
+    	<?php // If form isn't visible, still need to provide nonce for the ajax loading of comments ?>
+    	<input type="hidden" name="inline_comments_nonce" value="<?php echo $nonce; ?>" id="inline_comments_nonce" />
     
     <?php if ( get_option('comment_registration') != 1 || is_user_logged_in() ) : ?>
         
@@ -46,7 +46,7 @@ if ( !defined( 'ABSPATH' ) ) die( 'You cannot access this template file directly
                 
                 <form action="javascript://" method="POST" id="default_add_comment_form">
                     
-                    <input type="hidden" name="inline_comments_nonce_user" value="<?php echo $nonce_user; ?>" id="inline_comments_nonce_user" />
+                    <input type="hidden" name="inline_comments_form_nonce" value="<?php echo $form_nonce; ?>" id="inline_comments_form_nonce" />
                     <?php inline_comments_profile_pic(); ?>
                     <textarea placeholder="Press enter to submit comment&#8230;" tabindex="4" name="comment" id="inline-comments-textarea" class="inline-comments-auto-expand submit-on-enter"></textarea>
                     <span class="inline-comments-more-handle"><a href="#">more</a></span>

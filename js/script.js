@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
             user_email: $('#inline_comments_user_email').val(),
             user_url: $('#inline_comments_user_url').val(),
             comment: $( '#inline-comments-textarea' ).val(),
-            security: $('#inline_comments_nonce_user').val()
+            add_comment_nonce: $('#inline_comments_form_nonce').val()
         };
 
         $.ajax({
@@ -84,7 +84,7 @@ jQuery(document).ready(function ($) {
                     "target_div": "#inline-comments-ajax-target",
                     //"template": $( '#inline_comments_ajax_handle' ).attr( 'data-template' ),
                     "post_id": $('#inline-comments-ajax-handle').attr('data-post_id'),
-                    "security": $('#inline_comments_nonce_user').val()
+                    "get_comments_nonce": $('#inline_comments_nonce').val()
                 }, false);
                 $('textarea').val('');
                 //$this.css('opacity','1');
@@ -106,7 +106,6 @@ jQuery(document).ready(function ($) {
             var data = {
                 //"target_div": "#inline-comments-ajax-target",
                 //"template": $( '#inline-comments-ajax-handle' ).attr( 'data-template' ),
-                "security": $('#inline_comments_nonce').val()
                 action: 'inline_comments_get_comments',
                 post_id: $('#inline-comments-ajax-handle').attr( 'data-post_id' ),
                 get_comments_nonce: $('#inline_comments_nonce').val()
