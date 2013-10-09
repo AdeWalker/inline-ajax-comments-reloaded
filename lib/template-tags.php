@@ -17,13 +17,12 @@ function inline_comments_loaded(){
     
     add_action( 'wp_ajax_nopriv_inline_comments_get_comments', 'inline_comments_get_comments' );
     add_action( 'wp_ajax_inline_comments_get_comments', 'inline_comments_get_comments' );
-    //add_filter( 'template_redirect', 'inline_comments_template_redirect' );
 }
 add_action( 'plugins_loaded', 'inline_comments_loaded' );
 
 
 /**
- * Load our JavaScript and Stylesheet on single page only
+ * Load our JavaScript and Stylesheet where relevant
  *
  * @since 0.1-alpha
  */
@@ -31,7 +30,21 @@ function inline_comments_template_redirect() {
     //if ( is_singular() || is_page() ) {
         add_action( 'wp_enqueue_scripts', 'inline_comments_scripts');
     //}
+
+
+/**
+ * Load our own comments template
+ *
+ * Hooked to 'comments_template' filter
+ *
+ * @since
+ * @param string $file Default comments template
+ * @return string Custom comments template
+ */
+function inline_comments_template( $file ){
+    return IACR_LIB_DIR . '/comments-template.php';
 }
+add_filter( 'comments_template', 'inline_comments_template' );
 
 
 
@@ -123,7 +136,7 @@ function inline_comments_add_comment(){
 
 
 /**
- * Load comments and comment form
+ * Retrieve comments and send via Ajax
  *
  * @since 0.1-alpha
  */
@@ -176,7 +189,7 @@ function inline_comments_get_comments(){
  * the gravatar pic. If no ID is passed uses the current logged
  * in user.
  *
- * @uses get_user_meta()
+ * @uses get_currentuserinfo()
  * @uses get_avatar();
  */
 function inline_comments_profile_pic( $id_or_email=null, $email=null ){
@@ -189,11 +202,5 @@ function inline_comments_profile_pic( $id_or_email=null, $email=null ){
 
     $html = get_avatar( $id_or_email, 32 );
 
-    print '<span class="inline-comments-profile-pic-container">' . $html . '</span>';
+    echo '<span class="inline-comments-profile-pic-container">' . $html . '</span>';
 }
-
-
-function inline_comments_template( $file ){
-    return IACR_LIB_DIR . '/comments-template.php';
-}
-add_filter('comments_template', 'inline_comments_template');

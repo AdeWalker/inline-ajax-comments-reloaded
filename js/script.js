@@ -55,7 +55,6 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
 
         var $this = $(this);
-        //$this.css('opacity', '0.5');
 
         var data = {
             action: 'inline_comments_add_comment',
@@ -73,11 +72,6 @@ jQuery(document).ready(function ($) {
             dataType: "html",
             data: data,
             global: false,
-            beforeSend: function () {
-                // this is where we append a loading image
-                //$('#default_add_comment_form').html('<div class="loading"><img src="/images/loading.gif" alt="Loading..." /></div>');
-                //console.log(data);
-            },
             success: function (msg) {
             	console.log(msg);
                 inline_comments_ajax_get_comments({
@@ -87,7 +81,6 @@ jQuery(document).ready(function ($) {
                     "get_comments_nonce": $('#inline_comments_nonce').val()
                 }, false);
                 $('textarea').val('');
-                //$this.css('opacity','1');
             },
             error: function () {
                 $('#inline_comments_ajax_target').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
@@ -97,15 +90,17 @@ jQuery(document).ready(function ($) {
 
     });
 
-    // Fires when page is loaded or refreshed
+
+    /**
+     * Retrieve existing comments when page is loaded or refreshed
+     */
     $(window).load(function () {
     
-        // We only run this if the comments template has been served
+        // We only run this if the comments template has been served ok
         if ($('#inline-comments-ajax-handle').length) {
 
+            // Setup our Ajax POST variables
             var data = {
-                //"target_div": "#inline-comments-ajax-target",
-                //"template": $( '#inline-comments-ajax-handle' ).attr( 'data-template' ),
                 action: 'inline_comments_get_comments',
                 post_id: $('#inline-comments-ajax-handle').attr( 'data-post_id' ),
                 get_comments_nonce: $('#inline_comments_nonce').val()
@@ -118,7 +113,6 @@ jQuery(document).ready(function ($) {
                 data: data,
                 timeout: 5000,
                 success: function (msg) {
-                	console.log(data);
                 	// fade out loading icon
                     $('.inline-comments-loading-icon').hide();
                     // fade in the retrieved comments
