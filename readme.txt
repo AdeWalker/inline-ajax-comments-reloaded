@@ -5,7 +5,7 @@ Tags: comments, ajax, inline
 Requires at least: 3.6
 Tested up to: 3.6
 Stable tag: trunk
-License: GPLv2 or later
+License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Creates and displays Facebook-style single line comment form and comments, using Ajax. Based on ZaneMatthew's Inline Ajax Comments plugin, tweaked for studiograsshopper's needs.
@@ -35,7 +35,7 @@ Nice work, Sir!
 == Frequently Asked Questions ==
 
 = Doesn't this prevent search engines from seeing comments? =
-At the moment it does, [Google Ajax Crawling](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started) will be added in a later version.
+Yes, though as with the original version of this code from which this plugin is forked, [Google Ajax Crawling](https://developers.google.com/webmasters/ajax-crawling/docs/getting-started) will be added in a later version.
 
 = Does this work with Custom Post Types? =
 Yes
@@ -58,6 +58,12 @@ To be done
 
 
 == Changelog ==
+
+= 0.8.0 =
+* Released 09 October 2013
+* Reorganised js scripts
+* Reorganised nonce handling and ajax action functions
+* Lots of minor code tweaks for standrads, inline docs, etc
 
 = 0.7.0 =
 * Initial release 25 September 2013

@@ -4,7 +4,7 @@
  * Plugin URI: http://www.studiograsshopper.ch/projects/inline-ajax-comments-reloaded/
  * Description: Creates and displays Facebook-style single line comment form and comments, using Ajax.
  * Tags: comments, ajax, ajax comments, comment, inline, comment form
- * Version: 0.7.0
+ * Version: 0.8.0
  * Author: Studiograsshopper
  * Author URI: http://www.studiograsshopper.ch/
  * License: GPL
@@ -27,7 +27,7 @@ define( 'IACR_JS_URL',			IACR_URL . '/js' );
 define( 'IACR_TEMPLATE_DIR',	IACR_DIR . '/templates' );
 define( 'IACR_LANG_DIR_REL', 	'/inline-ajax-comments-reloaded/languages' );
 
-define( 'IACR_VER', 		'0.7.0' );
+define( 'IACR_VER', 		'0.8.0' );
 define( 'IACR_WP_VER_REQ', 	'3.6' );
 
 define( 'IACR_NAME', 		'Inline Ajax Comments Reloaded' );
@@ -99,7 +99,6 @@ add_action('wp_enqueue_scripts', 'inline_comments_enqueue_styles', 4 );
 
 function inline_comments_enqueue_scripts(){
     
-    //wp_register_script( 'textarea_auto_expand-script', plugin_dir_url( __FILE__ ) . 'vendor/textarea-auto-expand/jquery.textarea_auto_expand.js' );
     wp_register_script( 'inline-ajax-comments-script', IACR_JS_URL . '/script.js', array('jquery'), IACR_VER, false );
     wp_register_script( 'autogrow-script', IACR_JS_URL . '/autogrow.min.js', array('jquery'), IACR_VER, false );
     
