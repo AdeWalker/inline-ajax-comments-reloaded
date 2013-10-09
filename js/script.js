@@ -71,6 +71,7 @@ jQuery(document).ready(function ($) {
             url: inlinecomments.ajaxurl,
             dataType: "html",
             data: data,
+            timeout: 5000,
             global: false,
             success: function (msg) {
             	console.log(msg);
