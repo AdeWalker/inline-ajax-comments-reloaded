@@ -57,6 +57,10 @@ To be done
 To be done
 
 
+== Misc ==
+Theoretically, the plugin's inline documentation standards comply with [WordPress Coding Standards](http://make.wordpress.org/core/handbook/inline-documentation-standards/php-documentation-standards/#4-hooks-actions-and-filters). However, this is a work in progress, so no guarantees!
+
+
 == Changelog ==
 
 = 0.8.0 =
