@@ -101,9 +101,13 @@ function inline_comments_enqueue_scripts(){
     
     wp_register_script( 'inline-ajax-comments-script', IACR_JS_URL . '/script.js', array('jquery'), IACR_VER, false );
     wp_register_script( 'autogrow-script', IACR_JS_URL . '/autogrow.min.js', array('jquery'), IACR_VER, false );
+    wp_register_script( 'mcustom-scrollbar', IACR_JS_URL . '/jquery.mCustomScrollbar.js', array('jquery'), IACR_VER, false );
+    wp_register_script( 'mousewheel', IACR_JS_URL . '/jquery.mousewheel.js', array('jquery'), IACR_VER, false );
     
     wp_enqueue_script( 'inline-ajax-comments-script' );
     wp_enqueue_script( 'autogrow-script' );
+    wp_enqueue_script( 'mcustom-scrollbar' );
+    wp_enqueue_script( 'mousewheel' );
     
     $args = array(
     	'ajaxurl' => admin_url("admin-ajax.php"),
