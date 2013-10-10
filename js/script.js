@@ -41,6 +41,7 @@ jQuery(document).ready(function ($) {
                 $(params.target_div).fadeOut(4000);
                 $(params.target_div).html(msg).fadeIn(4000);
                 request_in_process = false;
+                $('.inline-comments-container').mCustomScrollbar("scrollTo", "bottom");
                 if (typeof params.callback === "function") {
                     params.callback();
                 }
@@ -82,6 +83,7 @@ jQuery(document).ready(function ($) {
                     "get_comments_nonce": $('#inline_comments_nonce').val()
                 }, false);
                 $('textarea').val('');
+                $('.inline-comments-container').mCustomScrollbar("update");// doesn't work
             },
             error: function () {
                 $('#inline_comments_ajax_target').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
@@ -126,6 +128,12 @@ jQuery(document).ready(function ($) {
                     	$('.inline-comments-callout-container').fadeIn();
                     }
                     if ( location.hash ){
+                    $('.inline-comments-container').mCustomScrollbar({
+                    	scrollInertia: 100,
+                    	theme: "dark-thick"
+                    });
+                    $('.inline-comments-container').mCustomScrollbar("scrollTo", "bottom");
+                    /*if ( location.hash ){
                         $('html, body').animate({
                             scrollTop: $(location.hash).offset().top
                         });
