@@ -1,16 +1,9 @@
 jQuery(document).ready(function ($) {
 
+    // Autogrow function call
     $('textarea').autogrow();
-
     
-    /**
-     * Default ajax setup
-     *//*
-    $.ajaxSetup({
-        type: "POST",
-        url: inlinecomments.ajaxurl,
-        dataType: "html"
-    });*/
+	
     
     /**
      * Allow Comment form to be submitted when the user
@@ -23,7 +16,10 @@ jQuery(document).ready(function ($) {
         }
     });
     
-
+	/**
+	 * Retrieve comments
+	 *
+	 */
     window.inline_comments_ajax_get_comments = function (params, ajax_global) {
 
         var request_in_process = false;
@@ -38,7 +34,7 @@ jQuery(document).ready(function ($) {
             cache: false,
             global: ajax_global,
             success: function (msg) {
-                $(params.target_div).fadeOut(4000);
+                //$(params.target_div).fadeOut(4000);
                 $(params.target_div).html(msg).fadeIn(4000);
                 request_in_process = false;
                 $('.inline-comments-container').mCustomScrollbar("scrollTo", "bottom");
@@ -50,7 +46,7 @@ jQuery(document).ready(function ($) {
     }
 
     /**
-     * Submit new comment, note comments are loaded via ajax
+     * Submit new comment via ajax
      */
     $(document).on('submit', '#default_add_comment_form', function (event) {
         event.preventDefault();
@@ -127,7 +123,6 @@ jQuery(document).ready(function ($) {
                     if ($('#inline-comments-target').length) {
                     	$('.inline-comments-callout-container').fadeIn();
                     }
-                    if ( location.hash ){
                     $('.inline-comments-container').mCustomScrollbar({
                     	scrollInertia: 100,
                     	theme: "dark-thick"
@@ -138,7 +133,7 @@ jQuery(document).ready(function ($) {
                             scrollTop: $(location.hash).offset().top
                         });
                         $(location.hash).addClass('inline-comments-highlight');
-                    }
+                    }*/
                 },
                 error: function () {
                 	// fade out the loading icon
