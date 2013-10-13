@@ -39,17 +39,17 @@ define( 'IACR_PAGEHOOK', 	'settings_page_' . IACR_FILE_HOOK );
 /**
  * From the WordPress plugin headers above we derive the version number, and plugin name
  */
-$plugin_headers = get_file_data( __FILE__, array( 'Version' => 'Version', 'Name' => 'Plugin Name' ) );
+$iacr_plugin_headers = get_file_data( __FILE__, array( 'Version' => 'Version', 'Name' => 'Plugin Name' ) );
 
 
 /**
  * We store our plugin data in the following global array.
  * $my_unique_name with your unique name
  */
-global $my_unique_name;
-$my_unique_name = array();
-$my_unique_name['version_key'] = strtolower( str_replace( ' ', '_', $plugin_headers['Name'] ) ) . '_version';
-$my_unique_name['version_value'] = $plugin_headers['Version'];
+global $iacr_unique_name;
+$iacr_unique_name = array();
+$iacr_unique_name['version_key'] = strtolower( str_replace( ' ', '_', $iacr_plugin_headers['Name'] ) ) . '_version';
+$iacr_unique_name['version_value'] = $iacr_plugin_headers['Version'];
 
 
 /**
@@ -58,12 +58,12 @@ $my_unique_name['version_value'] = $plugin_headers['Version'];
  */
 function inline_comments_acitvation(){
 
-    global $my_unique_name;
+    global $iacr_unique_name;
 
-    if ( get_option( $my_unique_name['version_key'] ) && get_option( $my_unique_name['version_key'] ) > $my_unique_name['version_value'] )
+    if ( get_option( $iacr_unique_name['version_key'] ) && get_option( $iacr_unique_name['version_key'] ) > $iacr_unique_name['version_value'] )
         return;
 
-    update_option( $my_unique_name['version_key'], $my_unique_name['version_value'] );
+    update_option( $iacr_unique_name['version_key'], $iacr_unique_name['version_value'] );
 
 }
 register_activation_hook( __FILE__, 'inline_comments_acitvation' );
@@ -73,8 +73,8 @@ register_activation_hook( __FILE__, 'inline_comments_acitvation' );
  * Delete our version number from the database when the plugin is activated.
  */
 function inline_comments_deactivate(){
-    global $my_unique_name;
-    delete_option( $my_unique_name['version_key'] );
+    global $iacr_unique_name;
+    delete_option( $iacr_unique_name['version_key'] );
 }
 register_deactivation_hook( __FILE__, 'inline_comments_deactivate' );
 
