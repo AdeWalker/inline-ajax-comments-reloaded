@@ -55,8 +55,10 @@ $iacr_unique_name['version_value'] = $iacr_plugin_headers['Version'];
 /**
  * When the user activates the plugin we add the version number to the
  * options table as "my_plugin_name_version" only if this is a newer version.
+ *
+ * @TODO This doesn't do anything useful - needs to be replaced
  */
-function inline_comments_acitvation(){
+function inline_comments_activation(){
 
     global $iacr_unique_name;
 
@@ -66,7 +68,7 @@ function inline_comments_acitvation(){
     update_option( $iacr_unique_name['version_key'], $iacr_unique_name['version_value'] );
 
 }
-register_activation_hook( __FILE__, 'inline_comments_acitvation' );
+register_activation_hook( __FILE__, 'inline_comments_activation' );
 
 
 /**
